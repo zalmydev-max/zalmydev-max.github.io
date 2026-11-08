@@ -5,7 +5,7 @@
 (function () {
   var PROJECT = 'days-end-deals', KEY = ['AIza', 'SyAi71kPo8ynMhKsmPt5F63PqkIDzr8A_oY'].join('') /* Firebase web key: public by design, same as in the app */, MEDIA = 'https://daysenddeals-api.daysenddeals.workers.dev/media/';
   var FS = 'https://firestore.googleapis.com/v1/projects/' + PROJECT + '/databases/(default)/documents';
-  var DEMO = {"pantrix": {"name": "Pantrix", "address": "180 Hooper Street, Brooklyn, NY 11211", "phone": "+1 (929) 568-6780", "primary": "#E8742A", "logo": "/s/logo/pantrix.jpg", "logoBg": "#000000", "tagline": "Food, Distributed Smarter.", "hours": [["Sunday", "8:00 AM", "6:00 PM"], ["Monday", "9:00 AM", "6:00 PM"], ["Tuesday", "9:00 AM", "6:00 PM"], ["Wednesday", "9:00 AM", "6:00 PM"], ["Thursday", "9:00 AM", "8:00 PM"], ["Friday", "8:00 AM", "2:00 PM"], ["Saturday", "8:00 PM", "11:30 PM"]], "deals": [{"t": "Iced coffee", "s": "Cold brew with milk · 16 oz", "img": "https://zalmydev-max.github.io/p/p-icedcoffee.jpg", "was": 4.75, "now": 2.99}, {"t": "Tri-color cake", "s": "1 lb container · rainbow layers", "img": "https://zalmydev-max.github.io/p/p-tricolor.jpg", "was": 12.99, "now": 8.49}, {"t": "Chocolate babka", "s": "Whole loaf · baked this morning", "img": "https://zalmydev-max.github.io/p2/p-babka2.jpg", "was": 12.99, "now": 7.49}, {"t": "Cinnamon babka", "s": "Whole loaf · swirled with cinnamon", "img": "https://zalmydev-max.github.io/p/p-cinnamon.jpg", "was": 11.99, "now": 6.99}, {"t": "Rugelach, 1 lb container", "s": "Chocolate and cinnamon mix", "img": "https://zalmydev-max.github.io/p/p-rugbox.jpg", "was": 13.99, "now": 8.99}, {"t": "Rugelach (loose)", "s": "By the pound · pick your mix", "img": "https://zalmydev-max.github.io/p/p-rugelach.jpg", "was": 12.99, "now": 7.99}, {"t": "Fresh challah", "s": "Plain or sesame · baked this morning", "img": "https://zalmydev-max.github.io/p/p-challah.jpg", "was": 6.5, "now": 3.5}, {"t": "Black & white cookies", "s": "Big NYC-style cookies", "img": "https://zalmydev-max.github.io/p/p-blackwhite.jpg", "was": 3.25, "now": 1.99}]}, "krm": {"name": "KRM Kollel (demo)", "address": "100 Demo Ave, Brooklyn, NY 11219", "phone": "(718) 555-0100", "primary": "#0B3D91", "logo": "/s/logo/krm.png", "logoBg": "#FFFFFF", "tagline": "Demo store with made-up prices", "hours": [["Sunday", "8:30 AM", "8:00 PM"], ["Monday", "8:30 AM", "8:00 PM"], ["Tuesday", "8:30 AM", "8:00 PM"], ["Wednesday", "8:30 AM", "8:00 PM"], ["Thursday", "8:30 AM", "10:00 PM"], ["Friday", "8:30 AM", "12:00 PM"]], "deals": [{"t": "Dark Chicken Cutlets", "s": "(Family Pack) · per lb", "img": null, "was": 8.09, "now": 5.99}, {"t": "Chicken Thighs", "s": "(Family Pack) · per lb", "img": null, "was": 3.23, "now": 2.39}, {"t": "Chicken Drumsticks", "s": "(Family Pack) · per lb", "img": null, "was": 4.04, "now": 2.99}, {"t": "Chicken Cutlets", "s": "(Family Pack) · per lb", "img": null, "was": 9.17, "now": 6.79}, {"t": "Chicken Wings", "s": "(Family Pack) · per lb", "img": null, "was": 2.69, "now": 1.99}, {"t": "London Broil", "s": "Grain Finished · per lb", "img": null, "was": 13.49, "now": 9.99}, {"t": "Silver Tip Roast", "s": "Grain Finished · per lb", "img": null, "was": 16.19, "now": 11.99}, {"t": "Premium Pepper Steak", "s": "Grain Finished · per lb", "img": null, "was": 16.19, "now": 11.99}]}};
+  var DEMO = {"pantrix": {"name": "Pantrix", "address": "180 Hooper Street, Brooklyn, NY 11211", "phone": "+1 (929) 568-6780", "email": "sales@pantrixfoods.com", "website": "https://pantrixfoods.com/", "primary": "#E8742A", "logo": "/s/logo/pantrix.jpg", "logoBg": "#000000", "tagline": "Food, Distributed Smarter.", "hours": [["Sunday", "8:00 AM", "6:00 PM"], ["Monday", "9:00 AM", "6:00 PM"], ["Tuesday", "9:00 AM", "6:00 PM"], ["Wednesday", "9:00 AM", "6:00 PM"], ["Thursday", "9:00 AM", "8:00 PM"], ["Friday", "8:00 AM", "2:00 PM"], ["Saturday", "8:00 PM", "11:30 PM"]], "deals": [{"t": "Iced coffee", "s": "Cold brew with milk · 16 oz", "img": "https://zalmydev-max.github.io/p/p-icedcoffee.jpg", "was": 4.75, "now": 2.99}, {"t": "Tri-color cake", "s": "1 lb container · rainbow layers", "img": "https://zalmydev-max.github.io/p/p-tricolor.jpg", "was": 12.99, "now": 8.49}, {"t": "Chocolate babka", "s": "Whole loaf · baked this morning", "img": "https://zalmydev-max.github.io/p2/p-babka2.jpg", "was": 12.99, "now": 7.49}, {"t": "Cinnamon babka", "s": "Whole loaf · swirled with cinnamon", "img": "https://zalmydev-max.github.io/p/p-cinnamon.jpg", "was": 11.99, "now": 6.99}, {"t": "Rugelach, 1 lb container", "s": "Chocolate and cinnamon mix", "img": "https://zalmydev-max.github.io/p/p-rugbox.jpg", "was": 13.99, "now": 8.99}, {"t": "Rugelach (loose)", "s": "By the pound · pick your mix", "img": "https://zalmydev-max.github.io/p/p-rugelach.jpg", "was": 12.99, "now": 7.99}, {"t": "Fresh challah", "s": "Plain or sesame · baked this morning", "img": "https://zalmydev-max.github.io/p/p-challah.jpg", "was": 6.5, "now": 3.5}, {"t": "Black & white cookies", "s": "Big NYC-style cookies", "img": "https://zalmydev-max.github.io/p/p-blackwhite.jpg", "was": 3.25, "now": 1.99}]}, "krm": {"name": "KRM Kollel (demo)", "address": "100 Demo Ave, Brooklyn, NY 11219", "phone": "(718) 555-0100", "website": "https://www.krmonline.com/", "primary": "#0B3D91", "logo": "/s/logo/krm.png", "logoBg": "#FFFFFF", "tagline": "Demo store with made-up prices", "hours": [["Sunday", "8:30 AM", "8:00 PM"], ["Monday", "8:30 AM", "8:00 PM"], ["Tuesday", "8:30 AM", "8:00 PM"], ["Wednesday", "8:30 AM", "8:00 PM"], ["Thursday", "8:30 AM", "10:00 PM"], ["Friday", "8:30 AM", "12:00 PM"]], "deals": [{"t": "Dark Chicken Cutlets", "s": "(Family Pack) · per lb", "img": null, "was": 8.09, "now": 5.99}, {"t": "Chicken Thighs", "s": "(Family Pack) · per lb", "img": null, "was": 3.23, "now": 2.39}, {"t": "Chicken Drumsticks", "s": "(Family Pack) · per lb", "img": null, "was": 4.04, "now": 2.99}, {"t": "Chicken Cutlets", "s": "(Family Pack) · per lb", "img": null, "was": 9.17, "now": 6.79}, {"t": "Chicken Wings", "s": "(Family Pack) · per lb", "img": null, "was": 2.69, "now": 1.99}, {"t": "London Broil", "s": "Grain Finished · per lb", "img": null, "was": 13.49, "now": 9.99}, {"t": "Silver Tip Roast", "s": "Grain Finished · per lb", "img": null, "was": 16.19, "now": 11.99}, {"t": "Premium Pepper Steak", "s": "Grain Finished · per lb", "img": null, "was": 16.19, "now": 11.99}]}};
   var TEAL = '#006A62', INK = '#15181B';
 
   // ---------- color (same rules as the app's qrColors / onColor) ----------
@@ -42,7 +42,7 @@
     return fetch(FS + '/stores/' + encodeURIComponent(id) + '?key=' + KEY).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (!d || !d.fields) return null; var s = obj(d.fields); if (s.visible !== true) return null;
       var b = s.branding || {};
-      return { name: s.name || s.orgName || 'Store', address: s.address || '', phone: s.phone || '', hours: s.hours, primary: b.primary, logo: media(b.logoUrl || b.logoPath), logoBg: b.logoBg || '#FFFFFF', live: true };
+      return { name: s.name || s.orgName || 'Store', tagline: b.tagline || s.tagline || '', address: s.address || '', phone: s.phone || '', email: s.email || '', website: s.website || b.website || '', font: b.font || b.fontFamily || '', hours: s.hours, primary: b.primary, logo: media(b.logoUrl || b.logoPath), logoBg: b.logoBg || '#FFFFFF', live: true };
     });
   }
   function liveDeals(id) {
@@ -56,6 +56,30 @@
           .filter(function (d) { return d.status === 'live' && (!d.endsAt || d.endsAt > now); })
           .map(function (d) { return { t: d.title, s: d.sub, img: media((d.photos || [])[0]), was: d.priceWas, now: d.priceNow, ends: d.endsAt }; });
       }).catch(function () { return []; });
+  }
+
+  // ---------- contact (same rules as the sign's contactParts: blanks and junk left out, nothing made up) ----------
+  function site(u) { return String(u || '').trim().replace(/^https?:\/\//i, '').replace(/^www\./i, '').replace(/\/+$/, ''); }
+  function contactLinks(s) {
+    var out = [];
+    if (s.phone && /\d{3}/.test(s.phone)) out.push('<a href="tel:' + esc(String(s.phone).replace(/[^+\d]/g, '')) + '">' + esc(s.phone) + '</a>');
+    if (s.email && /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(s.email)) out.push('<a href="mailto:' + esc(s.email) + '">' + esc(s.email) + '</a>');
+    var w = site(s.website); if (w && /^[^\s<>"]+\.[^\s<>"]+$/.test(w)) out.push('<a href="https://' + esc(w) + '" rel="noopener">' + esc(w) + '</a>');
+    return out;
+  }
+  // OUR small badge (Shlome, Nov 8 2:46 AM): the app mark + "Day's End Deals" in the app teal, in the page footer only.
+  function badge() {
+    var f = document.querySelector('footer');
+    if (!f) { f = document.createElement('footer'); document.body.appendChild(f); }
+    var old = f.querySelector('.dde'); if (old) return;
+    [].slice.call(f.querySelectorAll('a')).forEach(function (a) { if (/Day.s End Deals/.test(a.textContent) && !a.classList.contains('dde')) a.remove(); });
+    var a = document.createElement('a'); a.className = 'dde'; a.href = '/'; a.innerHTML = '<img src="/s/logo/dde.png" alt="" width="28" height="28"><span>Day\u2019s End Deals</span>';
+    f.insertBefore(a, f.firstChild);
+  }
+  function useFont(name) { // the store's font from its brand kit, if it is a plain family name (Google Fonts, free)
+    if (!name || !/^[A-Za-z0-9 ]{2,40}$/.test(name)) return;
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://fonts.googleapis.com/css2?family=' + encodeURIComponent(name).replace(/%20/g, '+') + ':wght@600;800&display=swap';
+    document.head.appendChild(l); document.documentElement.style.setProperty('--brandfont', "'" + name + "'");
   }
 
   // ---------- page ----------
@@ -76,10 +100,13 @@
     document.documentElement.style.setProperty('--brand', brand); document.documentElement.style.setProperty('--on', on); document.documentElement.style.setProperty('--ink', ink);
     var logo = s.logo ? '<span class="logo" style="background:' + esc(safe(s.logoBg, '#FFFFFF')) + '"><img src="' + esc(s.logo) + '" alt=""></span>'
       : '<span class="logo initials">' + esc(s.name.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/).map(function (w) { return w[0]; }).join('').slice(0, 3).toUpperCase()) + '</span>';
-    var hours = todayHours(s.hours);
-    var html = '<header class="band">' + logo + '<div class="who"><h1>' + esc(s.name) + '</h1>' + (s.tagline ? '<p>' + esc(s.tagline) + '</p>' : '') + '</div></header><div class="w">';
-    html += '<div class="facts">' + (s.address ? '<a class="fact" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(s.address) + '">' + esc(s.address) + '</a>' : '')
-      + (hours ? '<div class="fact">' + esc(hours) + '</div>' : '') + (s.phone ? '<a class="fact" href="tel:' + esc(String(s.phone).replace(/[^+\d]/g, '')) + '">' + esc(s.phone) + '</a>' : '') + '</div>';
+    var hours = todayHours(s.hours); useFont(s.font);
+    // Header (Shlome, Nov 8 2:50 AM): fully the store's: big logo, name, tagline, address, hours, phone, email, website.
+    var lines = (s.address ? '<a class="line" href="https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(s.address) + '">' + esc(s.address) + '</a>' : '')
+      + (hours ? '<div class="line">' + esc(hours) + '</div>' : '');
+    var contact = contactLinks(s);
+    if (contact.length) lines += '<div class="line contact">' + contact.join('<span class="sep"> \u00b7 </span>') + '</div>';
+    var html = '<header class="band">' + logo + '<div class="who"><h1>' + esc(s.name) + '</h1>' + (s.tagline ? '<p>' + esc(s.tagline) + '</p>' : '') + lines + '</div></header><div class="w">';
     if (/Android/i.test(navigator.userAgent) && !q.get('noapp')) html += '<a class="btn" href="' + appLink(id) + '">Open in the app</a>';
     if (q.get('noapp')) html += '<p class="muted">The Day\u2019s End Deals app isn\u2019t on this phone yet. Tonight\u2019s deals are below.</p>';
     html += '<h2>' + (deals.length ? 'Tonight\u2019s deals' : 'No deals posted right now') + '</h2>';
@@ -92,12 +119,12 @@
     });
     if (s.demo) html += '<p class="muted small">Demo store with made-up deals.</p>';
     html += '</div>';
-    root.innerHTML = html;
+    root.innerHTML = html; badge();
   }
   function notFound() {
     document.title = "Store not found \u00b7 Day's End Deals";
     root.innerHTML = '<header class="band"><span class="logo initials">?</span><div class="who"><h1>Store not found</h1></div></header><div class="w">'
-      + '<p>We couldn\u2019t find this store. The code may be old, or the store isn\u2019t on Day\u2019s End Deals yet.</p><a class="btn" href="/">Go to the home page</a></div>';
+      + '<p>We couldn\u2019t find this store. The code may be old, or the store isn\u2019t on Day\u2019s End Deals yet.</p><a class="btn" href="/">Go to the home page</a></div>'; badge();
   }
   if (!id) return notFound();
   var demo = DEMO[id.toLowerCase()];
