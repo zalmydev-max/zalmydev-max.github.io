@@ -1,0 +1,2 @@
+Gas station data (c) OpenStreetMap contributors, available under the Open Database License (ODbL): https://www.openstreetmap.org/copyright
+Built for the Car App by tools/build_stations.mjs. Only name, brand, address, position and fuel types are kept.
