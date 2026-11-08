@@ -1,0 +1,14 @@
+[
+ {
+  "relation": [
+   "delegate_permission/common.handle_all_urls"
+  ],
+  "target": {
+   "namespace": "android_app",
+   "package_name": "com.daysenddeals.app",
+   "sha256_cert_fingerprints": [
+    "A1:E5:FF:31:2F:C5:49:35:90:9C:6D:75:B9:BC:0C:2A:B9:36:C4:58:30:0D:92:83:FE:64:E2:38:6F:5C:A2:4C"
+   ]
+  }
+ }
+]
